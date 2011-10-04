@@ -10,12 +10,7 @@ BPM_PLUGIN.compileTransport = function(code, context, filename) {
 
   // Register package, probably a better way to do this
   if (id.match(/^[^\/]+\/main$/)) {
-
-    var ctx = context['package'],
-        pkg = { name: ctx.name, 
-                version: ctx.version, 
-                dependencies: ctx.dependencies };
-
+    var pkg = context['package'];
     ret += 'spade.register("'+packageName+'", '+JSON.stringify(pkg)+');\n\n';
   }
 
